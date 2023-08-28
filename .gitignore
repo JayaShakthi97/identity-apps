@@ -103,6 +103,7 @@ apps/*/build/
 apps/*/dist/
 apps/myaccount/src/main/
 apps/console/src/main/
+apps/*/java/webapp/src/main/
 apps/*/cache
 apps/myaccount/src/themes/
 apps/console/src/themes/
