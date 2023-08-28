@@ -987,15 +987,6 @@ importers:
         specifier: ^4.6.4
         version: 4.8.2
 
-  java:
-    dependencies:
-      '@wso2is/theme':
-        specifier: ^1.6.365
-        version: link:../modules/theme
-      rimraf:
-        specifier: ^3.0.2
-        version: 3.0.2
-
   modules/access-control:
     dependencies:
       '@wso2is/core':
