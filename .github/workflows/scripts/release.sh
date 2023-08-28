@@ -9,53 +9,31 @@ goToRootDirectory() {
 
 process_console_package() {
     goToRootDirectory && \
-    cd "apps/console" || exit 1 && \
+    cd "apps/console/java" || exit 1 && \
 
     local console_release_version
     console_release_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT$//')
 
     echo "Releasing console version: $console_release_version"
     mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:prepare -B -DscmCommentPrefix="[WSO2 Release] [GitHub Action] [Release] [skip ci] " && \
-    mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:perform -B --settings ~/.m2/settings.xml && \
-
-    goToRootDirectory && \
-    cd "apps/server-features/console/org.wso2.identity.apps.console.server.feature" || exit 1 && \
-
-    mvn versions:set-property -Dproperty=console.version -DnewVersion="$console_release_version" && \
-    git add pom.xml && \
-    git commit -m "[WSO2 Release] [GitHub Action] [Release] [skip ci] Update console version to $console_release_version" && \
-
-    echo "Releasing console feature version: $console_release_version"
-    mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:prepare -B -DscmCommentPrefix="[WSO2 Release] [GitHub Action] [Release] [skip ci] " && \
     mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:perform -B --settings ~/.m2/settings.xml
 }
 
 process_myaccount_package() {
     goToRootDirectory && \
-    cd "apps/myaccount" || exit 1 && \
+    cd "apps/myaccount/java" || exit 1 && \
 
     local myaccount_release_version
     myaccount_release_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT$//')
 
     echo "Releasing myaccount version: $myaccount_release_version"
     mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:prepare -B -DscmCommentPrefix="[WSO2 Release] [GitHub Action] [Release] [skip ci] " && \
-    mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:perform -B --settings ~/.m2/settings.xml && \
-
-    goToRootDirectory && \
-    cd "apps/server-features/myaccount/org.wso2.identity.apps.myaccount.server.feature" || exit 1 && \
-
-    mvn versions:set-property -Dproperty=myaccount.version -DnewVersion="$myaccount_release_version" && \
-    git add pom.xml && \
-    git commit -m "[WSO2 Release] [GitHub Action] [Release] [skip ci] Update myaccount version to $myaccount_release_version" && \
-
-    echo "Releasing myaccount feature version: $myaccount_release_version"
-    mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:prepare -B -DscmCommentPrefix="[WSO2 Release] [GitHub Action] [Release] [skip ci] " && \
     mvn -Dresume=false -Darguments='-Dadditionalparam=-Xdoclint:none' -Dmaven.test.skip=true release:perform -B --settings ~/.m2/settings.xml
 }
 
 process_java_apps_package() {
     goToRootDirectory && \
-    cd "java" || exit 1 && \
+    cd "identity-apps-core" || exit 1 && \
 
     local java_apps_release_version
     java_apps_release_version=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-SNAPSHOT$//')
