@@ -22,7 +22,7 @@ name: Release
 
 on:
     push:
-        branches: [ master ]
+        branches: [ master, new-ui-build ]
         paths-ignore:
             - "LICENSE"
         workflow_dispatch:
@@ -164,6 +164,7 @@ jobs:
 
             - name: 🚀 Perform Release
               id: perform-release
+              if: {{ false }}
               working-directory: .github/workflows
               run: |
                   PACKAGES="${{ toJson(steps.changesets.outputs.publishedPackages) }}"

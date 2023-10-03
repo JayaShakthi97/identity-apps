@@ -1,11 +1,11 @@
 {
     "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
-    "changelog": ["@changesets/changelog-github", { "repo": "wso2/identity-apps" }],
+    "changelog": ["@changesets/changelog-github", { "repo": "JayaShakthi97/identity-apps" }],
     "commit": false,
-    "fixed": [],
+    "fixed": [["@wso2is/theme", "@wso2is/console"], ["@wso2is/theme", "@wso2is/myaccount"]],
     "linked": [],
     "access": "public",
-    "baseBranch": "master",
+    "baseBranch": "new-ui-build",
     "updateInternalDependencies": "patch",
     "ignore": [],
     "privatePackages": {
