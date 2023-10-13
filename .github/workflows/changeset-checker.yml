@@ -23,10 +23,10 @@
 name: Changeset Checker
 
 on:
-    workflow_run:
-        workflows: ["Workflow_01"]
+    pull_request:
         types:
-          - completed
+            - opened
+            - synchronize
 
 jobs:
   test:
