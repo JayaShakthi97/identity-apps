@@ -1,19 +1,17 @@
-# -------------------------------------------------------------------------------------
-name: Changeset Checker
+name: 🦋 Check for Changeset
 
 on:
-    pull_request:
+    workflow_run:
+        workflows: ["Trigger Changeset Checker"]
         types:
-            - opened
-            - synchronize
+            - completed
 
 jobs:
-    test:
+    upload:
         runs-on: ubuntu-latest
-
+        if: >
+            github.event.workflow_run.event == 'pull_request' &&
+            github.event.workflow_run.conclusion == 'success'
         steps:
-            - name: Check out code
-              uses: actions/checkout@v2
-
-            - name: Print a message
-              run: echo "Simple Test Workflow ran successfully!"
+            - name: Print test message
+              run: echo "Hello World"
