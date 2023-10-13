@@ -20,18 +20,13 @@
 
 # This workflow will check if a submitted PR has changesets.
 
-name: 🦋 Check for Changeset
+name: Changeset Checker
 
-# read-write repo token
-# access to secrets
 on:
     workflow_run:
-        workflows: ["Trigger Changeset Checker"]
+        workflows: ["Workflow_01"]
         types:
-            - completed
-
-env:
-    GH_TOKEN: ${{ secrets.RELEASE_BOT_TOKEN }}
+          - completed
 
 jobs:
   test:
