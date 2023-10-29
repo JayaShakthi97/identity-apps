@@ -50,7 +50,9 @@ if [ -z "$GITHUB_RUN_NUMBER" ]; then
 fi
 
 # Create and checkout the release branch
-create_and_checkout_release_branch || exit 1
+# create_and_checkout_release_branch || exit 1
+
+git checkout -b fix-release-workflow
 
 # Execute dummy long-running process
 dummy_long_running_process || {
