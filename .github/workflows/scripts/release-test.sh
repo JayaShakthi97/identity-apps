@@ -42,7 +42,6 @@ dummy_long_running_process() {
     git add "$dummyFileName"
     git commit -m "[skip ci] Add dummy file ($dummyFileName) during release process"
     echo "Committed $dummyFileName to the branch."
-    git push --set-upstream origin "$releaseBranch"
     echo "Pushed the changes to the remote branch."
 }
 
