@@ -19,8 +19,8 @@ create_and_checkout_release_branch() {
 merge_to_master() {
     local releaseBranch="release-action-$GITHUB_RUN_NUMBER"
 
-    git checkout master &&
-    git merge --no-ff "$releaseBranch" -m "Merge release branch $releaseBranch" &&
+    git checkout fix-release-workflow &&
+    git merge --no-ff "$releaseBranch" -m "[skip ci] Merge release branch $releaseBranch" &&
     echo "Merged $releaseBranch into master"
 }
 
@@ -50,9 +50,9 @@ if [ -z "$GITHUB_RUN_NUMBER" ]; then
 fi
 
 # Create and checkout the release branch
-# create_and_checkout_release_branch || exit 1
+create_and_checkout_release_branch || exit 1
 
-git checkout -b fix-release-workflow
+# git checkout -b fix-release-workflow
 
 # Execute dummy long-running process
 dummy_long_running_process || {
@@ -61,4 +61,4 @@ dummy_long_running_process || {
 }
 
 # Merge to master after successful release
-#merge_to_master || exit 1
+merge_to_master || exit 1
