@@ -25,6 +25,7 @@ merge_to_master() {
 }
 
 dummy_long_running_process() {
+    local releaseBranch="release-action-$GITHUB_RUN_NUMBER"
     local minutes=5
 
     for (( i=1; i<=$minutes; i++ ))
@@ -39,7 +40,7 @@ dummy_long_running_process() {
     git add "$dummyFileName"
     git commit -m "Add dummy file ($dummyFileName) during release process"
     echo "Committed $dummyFileName to the branch."
-    git push
+    git push --set-upstream origin "$releaseBranch"
     echo "Pushed the changes to the remote branch."
 }
 
