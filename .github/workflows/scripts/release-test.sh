@@ -20,7 +20,9 @@ merge_to_master() {
     local releaseBranch="release-action-$GITHUB_RUN_NUMBER"
 
     git checkout fix-release-workflow &&
+    git pull origin fix-release-workflow &&
     git merge --no-ff "$releaseBranch" -m "[skip ci] Merge release branch $releaseBranch" &&
+    git push origin fix-release-workflow &&
     echo "Merged $releaseBranch into master"
 }
 
@@ -40,7 +42,7 @@ dummy_long_running_process() {
     git add "$dummyFileName"
     git commit -m "[skip ci] Add dummy file ($dummyFileName) during release process"
     echo "Committed $dummyFileName to the branch."
-    git push --set-upstream origin fix-release-workflow
+    git push --set-upstream origin "$releaseBranch"
     echo "Pushed the changes to the remote branch."
 }
 
