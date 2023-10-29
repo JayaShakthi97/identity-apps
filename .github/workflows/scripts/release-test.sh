@@ -38,7 +38,7 @@ dummy_long_running_process() {
     local dummyFileName="dummy_file_$GITHUB_RUN_NUMBER.txt"
     echo "This is a dummy file generated during the release process." > "$dummyFileName"
     git add "$dummyFileName"
-    git commit -m "Add dummy file ($dummyFileName) during release process"
+    git commit -m "[skip ci] Add dummy file ($dummyFileName) during release process"
     echo "Committed $dummyFileName to the branch."
     git push --set-upstream origin fix-release-workflow
     echo "Pushed the changes to the remote branch."
