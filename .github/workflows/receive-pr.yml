@@ -34,7 +34,7 @@ jobs:
             - name: Build
               run: |
                   echo "Building..."
-                  sleep 5
+                  sleep 100
                   echo "Done!"
             - name: Save PR number
               run: |
