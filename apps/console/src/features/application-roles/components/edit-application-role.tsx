@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
  *
  * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -41,7 +41,7 @@ const EditApplicationRoles = (props: EditApplicationRolesProps): ReactElement =>
 
     const [ activeTabIndex, setActiveTabIndex ] = useState<number>(undefined);
     const defaultActiveIndex: number = 0;
-    
+
     const extendedFeatureConfig: ExtendedFeatureConfigInterface = useSelector(
         (state: AppState) => state.config.ui.features);
     const isSubOrg: boolean = window[ "AppUtils" ].getConfig().organizationName;
@@ -102,7 +102,7 @@ const EditApplicationRoles = (props: EditApplicationRolesProps): ReactElement =>
                 }
             );
         }
-    
+
         return panes;
     };
 
