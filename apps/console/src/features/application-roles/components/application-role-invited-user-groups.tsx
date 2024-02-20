@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com). All Rights Reserved.
+ * Copyright (c) 2023, WSO2 LLC. (https://www.wso2.com).
  *
  * WSO2 LLC. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
@@ -77,8 +77,8 @@ const ApplicationRoleInvitedUserGroups = (props: ApplicationRoleGroupsProps): Re
         error: descendantDataFetchRequestError
     } = useDescendantsOfSubOrg();
 
-    useEffect(() => {                                                
-        if (originalApplicationRoleGroupData instanceof IdentityAppsApiException 
+    useEffect(() => {
+        if (originalApplicationRoleGroupData instanceof IdentityAppsApiException
                 || applicationRoleGroupDataFetchRequestError) {
             handleAlerts({
                 description: t(
@@ -92,8 +92,8 @@ const ApplicationRoleInvitedUserGroups = (props: ApplicationRoleGroupsProps): Re
         }
     }, [ originalApplicationRoleGroupData ]);
 
-    useEffect(() => {                                                  
-        if (originalDescendantData instanceof IdentityAppsApiException 
+    useEffect(() => {
+        if (originalDescendantData instanceof IdentityAppsApiException
                 || descendantDataFetchRequestError) {
             handleAlerts({
                 description: t(
@@ -155,11 +155,11 @@ const ApplicationRoleInvitedUserGroups = (props: ApplicationRoleGroupsProps): Re
 
         if (query === "") {
             setProcessedGroupsList(initialGroupsList);
-            
+
             return;
         }
 
-        const filteredGroupsList: ApplicationRoleGroupInterface[] = 
+        const filteredGroupsList: ApplicationRoleGroupInterface[] =
         initialGroupsList.filter((group: ApplicationRoleGroupInterface) => {
             return group.name.toLowerCase().includes(query.toLowerCase());
         });
@@ -213,7 +213,7 @@ const ApplicationRoleInvitedUserGroups = (props: ApplicationRoleGroupsProps): Re
 
         return null;
     };
-        
+
     /**
      * Resolves data table columns.
      */
@@ -314,7 +314,7 @@ const ApplicationRoleInvitedUserGroups = (props: ApplicationRoleGroupsProps): Re
                                             data-componentid={ `${ componentId }-groups-list-search-input` }
                                             icon={ <Icon name="search" /> }
                                             iconPosition="left"
-                                            onChange={ (e: ChangeEvent<HTMLInputElement>) => 
+                                            onChange={ (e: ChangeEvent<HTMLInputElement>) =>
                                                 searchGroups(e.target.value) }
                                             value={ searchQuery }
                                             placeholder={ t("extensions:console.applicationRoles.roleGroups." +
