@@ -51,7 +51,7 @@ interface ImportCertificatePropsInterface extends TestableComponentInterface {
 /**
  * This renders the import certificate wizard.
  *
- * @param {ImportCertificatePropsInterface} props
+ * @param props - Props injected to the component.
  *
  * @returns {ReactElement}
  */
