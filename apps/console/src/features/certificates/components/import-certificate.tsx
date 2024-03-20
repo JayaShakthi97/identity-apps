@@ -53,7 +53,6 @@ interface ImportCertificatePropsInterface extends TestableComponentInterface {
  *
  * @param props - Props injected to the component.
  *
- * @returns {ReactElement}
  */
 export const ImportCertificate: FunctionComponent<ImportCertificatePropsInterface> = (
     props: ImportCertificatePropsInterface
