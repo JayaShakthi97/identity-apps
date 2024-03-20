@@ -21,8 +21,7 @@ import { CertificatesResourceEndpointsInterface } from "../models";
 /**
  * Get the resource endpoints for the certificates feature.
  *
- * @param {string} serverHost - Server Host.
- * @return {CertificatesResourceEndpointsInterface}
+ * @param serverHost - Server Host.
  */
 export const getCertificatesResourceEndpoints = (serverHost: string): CertificatesResourceEndpointsInterface => {
     return {
