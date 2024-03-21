@@ -128,7 +128,7 @@ export const ImportCertificate: FunctionComponent<ImportCertificatePropsInterfac
      *      2. the state of the first step component
      *       so that they can be sent back if previous is clicked.
      *
-     * @param {Certificate} data The alias and the PEM-encoded certificate string.
+     * @param data - The alias and the PEM-encoded certificate string.
      * @param {string} name The alias of the certificate.
      * @param {string} pem The PEM-encoded string.
      * @param {string} fileDecoded The decoded `.cer` file content.
