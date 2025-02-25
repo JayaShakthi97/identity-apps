@@ -1085,6 +1085,8 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
     );
 };
 
+
+
 AddUserUpdated.defaultProps = {
     hiddenFields: [],
     requestedPasswordOption: PasswordOptionTypes.ASK_PASSWORD
