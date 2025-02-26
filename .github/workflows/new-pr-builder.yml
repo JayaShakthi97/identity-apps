@@ -1,0 +1,148 @@
+# This workflow will build PRs submitted to the master branch using a single job.
+name: 👷 New PR Builder
+
+on:
+  pull_request:
+    types: [ opened, synchronize, labeled ]
+    branches: [ master ]
+    paths-ignore:
+      - "**.md"
+      - "LICENSE"
+  workflow_dispatch:
+
+concurrency:
+  group: new-pr-builder-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  pr_builder:
+    name: PR Builder Combined Job
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ lts/* ]
+        pnpm-version: [ 8.7.4 ]
+        maven-version: [ 3.8.6 ]
+        java-version: [ 11 ]
+    steps:
+      # Common setup steps
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v2.3.3
+        with:
+          fetch-depth: 0
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: ☕ Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: "adopt"
+          cache: maven
+
+      - name: 🐳 Set SHAs for Nx
+        uses: nrwl/nx-set-shas@v3
+        with:
+          main-branch-name: "master"
+
+      - name: 🥡 Setup pnpm
+        uses: pnpm/action-setup@v2.1.0
+        with:
+          version: ${{ matrix.pnpm-version }}
+          run_install: false
+
+      - name: 🎈 Get pnpm store directory
+        id: get-pnpm-cache-dir
+        run: echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - name: 🔆 Cache pnpm modules
+        uses: actions/cache@v3
+        id: pnpm-cache
+        with:
+          path: ${{ steps.get-pnpm-cache-dir.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 🧩 Install Dependencies
+        run: pnpm install
+
+      # Lint step
+      - name: 🦄 Lint Changed Files
+        working-directory: .github/workflows
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            bash ./scripts/lint-changed.sh
+          else
+            bash ./scripts/lint-changed.sh ${{ github.event.pull_request.number }}
+          fi
+
+      # Build reusable modules (needed for typechecking and testing)
+      - name: 👷 Build Re-usable Modules
+        run: pnpm build:modules
+
+      # Typecheck step
+      - name: ☄️ Check Type Errors
+        run: pnpm nx affected --base=${{ env.NX_BASE }} --head=${{ env.NX_HEAD }} --target=typecheck --parallel=3
+
+      # Test steps
+      - name: 🃏 Run Jest & Collect Coverage
+        run: pnpm test:unit:coverage
+
+      - name: 🤖 Aggregate Test Coverage
+        run: |
+          pnpm test:unit:coverage:aggregate
+          pnpm nyc:text-summary-report
+          pnpm nyc:text-report
+
+      - name: Upload Coverage Reports (@wso2is/core)
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./modules/core/coverage/coverage-final.json
+          flags: '@wso2is/core'
+          verbose: true
+
+      - name: Upload Coverage Reports (@wso2is/features)
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./features/coverage/coverage-final.json
+          flags: '@wso2is/features'
+          verbose: true
+
+      - name: Upload Coverage Reports (@wso2is/i18n)
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./modules/i18n/coverage/coverage-final.json
+          flags: '@wso2is/i18n'
+          verbose: true
+
+      # Build steps
+      - name: 🦩 Set up Maven
+        uses: stCarolas/setup-maven@v4
+        with:
+          maven-version: ${{ matrix.maven-version }}
+
+      - name: 👷 PNPM Build
+        run: pnpm build
+
+      - name: 🏗️ Maven Build identity-apps-core
+        run: |
+          cd identity-apps-core
+          mvn clean install -U -Dlint.exec.skip=true -Dbootstrap.exec.skip=true
+
+      - name: 💾 Cache local Maven repository
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
