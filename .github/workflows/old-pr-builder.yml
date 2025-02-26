@@ -5,7 +5,7 @@ name: 👷 Old PR Builder
 on:
   pull_request:
     types: [ opened, synchronize, labeled ]
-    branches: [ master ]
+    branches: [ master-old ]
     paths-ignore:
       - "**.md"
       - "LICENSE"

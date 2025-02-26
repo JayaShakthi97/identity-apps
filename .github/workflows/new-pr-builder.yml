@@ -4,7 +4,7 @@ name: 👷 New PR Builder
 on:
   pull_request:
     types: [ opened, synchronize, labeled ]
-    branches: [ master ]
+    branches: [ master-new ]
     paths-ignore:
       - "**.md"
       - "LICENSE"
