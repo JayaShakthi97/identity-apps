@@ -432,6 +432,8 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
             );
         }
 
+
+
         if (askPasswordOption === AskPasswordOptionTypes.OFFLINE) {
             return (
                 <Grid.Row columns={ 1 }>
