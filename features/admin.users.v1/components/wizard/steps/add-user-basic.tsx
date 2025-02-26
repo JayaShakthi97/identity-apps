@@ -413,6 +413,8 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
         );
     };
 
+
+
     const resolveAskPasswordOption = (): ReactElement => {
         if (askPasswordOption === AskPasswordOptionTypes.EMAIL) {
             return (
