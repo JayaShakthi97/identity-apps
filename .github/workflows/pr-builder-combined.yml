@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: pr-builder-${{ github.ref }}
+  group: pr-builder-combined-${{ github.ref }}
   cancel-in-progress: true
 
 env:
