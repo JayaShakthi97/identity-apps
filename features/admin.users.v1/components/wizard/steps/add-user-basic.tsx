@@ -362,6 +362,8 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
         return null;
     };
 
+
+
     const renderAskPasswordOption = (): ReactElement => {
         return (
             <div className="mt-4 mb-4 ml-4">
@@ -411,6 +413,8 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
         );
     };
 
+
+
     const resolveAskPasswordOption = (): ReactElement => {
         if (askPasswordOption === AskPasswordOptionTypes.EMAIL) {
             return (
@@ -428,6 +432,8 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
             );
         }
 
+
+
         if (askPasswordOption === AskPasswordOptionTypes.OFFLINE) {
             return (
                 <Grid.Row columns={ 1 }>
@@ -443,6 +449,10 @@ export const AddUserUpdated: React.FunctionComponent<AddUserProps> = (
                 </Grid.Row>
             );
         }
+
+
+
+
 
         return null;
     };
