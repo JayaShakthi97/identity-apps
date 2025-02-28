@@ -126,21 +126,21 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
      * Retrieve the application data for the console application, filtering by name.
      */
     const {
-        data: applicationListData ,
+        data: applicationListData,
+        isLoading: isApplicationListRequestLoading,
         error: applicationListFetchRequestError
     } = useApplicationList(
         null,
         null,
         null,
-        `name eq ${ApplicationManagementConstants.CONSOLE_APP_NAME}`,
-        !!searchQuery
+        `name eq ${ApplicationManagementConstants.CONSOLE_APP_NAME}`
     );
 
     /**
      * Build the roles filter to search for roles specific to the console application.
      */
     const roleSearchFilter: string = useMemo(() => {
-        if (applicationListData?.applications && applicationListData?.applications?.length > 0) {
+        if (applicationListData?.applications?.length > 0) {
             return `audience.value eq ${applicationListData?.applications[0]?.id}`;
         }
 
@@ -148,19 +148,18 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
     }, [ applicationListData ]);
 
     /**
-     * Retrieve the roles list.
-     * Only retrieve roles when there an edge case where the user
-     * is already in the system and the user is not an admin user.
+     * Retrieve the roles list for the console application.
      */
     const {
-        data: rolesList,
-        error: rolesListFetchRequestError
+        data: consoleRolesList,
+        isLoading: isConsoleRolesListRequestLoading,
+        error: consoleRolesListFetchRequestError
     } = useGetRolesList(
         null,
         null,
         roleSearchFilter,
         null,
-        !!searchQuery
+        !!roleSearchFilter
     );
 
     /**
@@ -213,7 +212,7 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
                 consoleSettingsFeatureConfig?.enabled
             ) {
                 const assignedRoles: RolesInterface[] = invite?.roles.map(
-                    (roleDisplayName: string) => rolesList?.Resources?.find(
+                    (roleDisplayName: string) => consoleRolesList?.Resources?.find(
                         (role: RolesInterface) => role?.displayName === roleDisplayName
                     )
                 ).filter(Boolean);
@@ -294,17 +293,17 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
      * Dispatches error notifications for roles list fetch request error.
      */
     useEffect(() => {
-        if (!rolesListFetchRequestError) {
+        if (!consoleRolesListFetchRequestError) {
             return;
         }
 
-        if (rolesListFetchRequestError?.response?.data?.description) {
+        if (consoleRolesListFetchRequestError?.response?.data?.description) {
             dispatch(addAlert({
-                description: rolesListFetchRequestError?.response?.data?.description
-                    ?? rolesListFetchRequestError?.response?.data?.detail
+                description: consoleRolesListFetchRequestError?.response?.data?.description
+                    ?? consoleRolesListFetchRequestError?.response?.data?.detail
                         ?? t("roles:notifications.fetchRoles.error.description"),
                 level: AlertLevels.ERROR,
-                message: rolesListFetchRequestError?.response?.data?.message
+                message: consoleRolesListFetchRequestError?.response?.data?.message
                     ?? t("roles:notifications.fetchRoles.error.message")
             }));
 
@@ -316,17 +315,17 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
             level: AlertLevels.ERROR,
             message: t("roles:notifications.fetchRoles.genericError.message")
         }));
-    }, [ rolesListFetchRequestError ]);
+    }, [ consoleRolesListFetchRequestError ]);
 
     /**
      * Get the administrator role from the roles list.
      */
     useEffect(() => {
-        if (!rolesList || rolesList.Resources.length <= 0) {
+        if (!consoleRolesList || consoleRolesList.Resources.length <= 0) {
             return;
         }
 
-        const adminRole: RolesInterface = rolesList.Resources.find((role: RolesInterface) =>
+        const adminRole: RolesInterface = consoleRolesList.Resources.find((role: RolesInterface) =>
             role.displayName === administratorConfig.adminRoleName);
 
         // If the admin role is not found, show an error message.
@@ -344,7 +343,7 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
             // Else, set the admin role ID.
             setAdminRoleId(adminRole?.id);
         }
-    }, [ rolesList ]);
+    }, [ consoleRolesList ]);
 
     /**
      * This function handles assigning the roles to the user.
@@ -525,86 +524,88 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
      * This function handles sending the invitation to the external admin user.
      */
     const sendExternalInvitation = (invite: UserInviteInterface) => {
-        if (invite != null) {
-            setIsSubmitting(true);
+        if (!invite) {
+            return;
+        }
 
-            sendInvite(invite)
-                .then(() => {
-                    dispatch(addAlert({
-                        description: t(
-                            "console:manage.features.invite.notifications.sendInvite.success.description"
-                        ),
-                        level: AlertLevels.SUCCESS,
-                        message: t(
-                            "console:manage.features.invite.notifications.sendInvite.success.message"
-                        )
-                    }));
+        setIsSubmitting(true);
+
+        sendInvite(invite)
+            .then(() => {
+                dispatch(addAlert({
+                    description: t(
+                        "console:manage.features.invite.notifications.sendInvite.success.description"
+                    ),
+                    level: AlertLevels.SUCCESS,
+                    message: t(
+                        "console:manage.features.invite.notifications.sendInvite.success.message"
+                    )
+                }));
+                setIsSubmitting(false);
+                closeWizard();
+                onInvitationSendSuccessful();
+            })
+            .catch((error: AxiosError) => {
+                // Axios throws a generic `Network Error` for 401 status.
+                // As a temporary solution, a check to see if a response
+                // is available has be used.
+                if (!error.response || error.response.status === 401) {
                     setIsSubmitting(false);
                     closeWizard();
-                    onInvitationSendSuccessful();
-                })
-                .catch((error: AxiosError) => {
-                    // Axios throws a generic `Network Error` for 401 status.
-                    // As a temporary solution, a check to see if a response
-                    // is available has be used.
-                    if (!error.response || error.response.status === 401) {
-                        setIsSubmitting(false);
-                        closeWizard();
-                        dispatch(addAlert({
-                            description: t(
-                                "console:manage.features.invite.notifications.sendInvite.error.description"
-                            ),
-                            level: AlertLevels.ERROR,
-                            message: t(
-                                "console:manage.features.invite.notifications.sendInvite.error.message"
-                            )
-                        }));
-                    } else if (error.response.status === 403 &&
-                        error?.response?.data?.code === UserManagementConstants.ERROR_COLLABORATOR_USER_LIMIT_REACHED) {
-                        setIsSubmitting(false);
-                        closeWizard();
-                        dispatch(addAlert({
-                            description: t(
-                                "extensions:manage.invite.notifications.sendInvite.limitReachError.description"
-                            ),
-                            level: AlertLevels.ERROR,
-                            message: t(
-                                "extensions:manage.invite.notifications.sendInvite.limitReachError.message"
-                            )
-                        }));
-                    } else if (error.response.status === 409) {
-                        // User already exists in the system.
-                        // We need to check if this user is having the Administator role.
-                        handleAlreadyExistingUser(invite);
-                    } else if (error?.response?.data?.description) {
-                        setIsSubmitting(false);
-                        closeWizard();
-                        dispatch(addAlert({
-                            description: t(
-                                "console:manage.features.invite.notifications.sendInvite.error.description",
-                                { description: error.response.data.description }
-                            ),
-                            level: AlertLevels.ERROR,
-                            message: t(
-                                "console:manage.features.invite.notifications.sendInvite.error.message"
-                            )
-                        }));
-                    } else {
-                        setIsSubmitting(false);
-                        closeWizard();
-                        // Generic error message
-                        dispatch(addAlert({
-                            description: t(
-                                "console:manage.features.invite.notifications.sendInvite.genericError.description"
-                            ),
-                            level: AlertLevels.ERROR,
-                            message: t(
-                                "console:manage.features.invite.notifications.sendInvite.genericError.message"
-                            )
-                        }));
-                    }
-                });
-        }
+                    dispatch(addAlert({
+                        description: t(
+                            "console:manage.features.invite.notifications.sendInvite.error.description"
+                        ),
+                        level: AlertLevels.ERROR,
+                        message: t(
+                            "console:manage.features.invite.notifications.sendInvite.error.message"
+                        )
+                    }));
+                } else if (error.response.status === 403 &&
+                    error?.response?.data?.code === UserManagementConstants.ERROR_COLLABORATOR_USER_LIMIT_REACHED) {
+                    setIsSubmitting(false);
+                    closeWizard();
+                    dispatch(addAlert({
+                        description: t(
+                            "extensions:manage.invite.notifications.sendInvite.limitReachError.description"
+                        ),
+                        level: AlertLevels.ERROR,
+                        message: t(
+                            "extensions:manage.invite.notifications.sendInvite.limitReachError.message"
+                        )
+                    }));
+                } else if (error.response.status === 409) {
+                    // User already exists in the system.
+                    // We need to check if this user is having the Administrator role.
+                    handleAlreadyExistingUser(invite);
+                } else if (error?.response?.data?.description) {
+                    setIsSubmitting(false);
+                    closeWizard();
+                    dispatch(addAlert({
+                        description: t(
+                            "console:manage.features.invite.notifications.sendInvite.error.description",
+                            { description: error.response.data.description }
+                        ),
+                        level: AlertLevels.ERROR,
+                        message: t(
+                            "console:manage.features.invite.notifications.sendInvite.error.message"
+                        )
+                    }));
+                } else {
+                    setIsSubmitting(false);
+                    closeWizard();
+                    // Generic error message
+                    dispatch(addAlert({
+                        description: t(
+                            "console:manage.features.invite.notifications.sendInvite.genericError.description"
+                        ),
+                        level: AlertLevels.ERROR,
+                        message: t(
+                            "console:manage.features.invite.notifications.sendInvite.genericError.message"
+                        )
+                    }));
+                }
+            });
     };
 
     /**
@@ -668,6 +669,11 @@ export const AddAdministratorWizard: FunctionComponent<AddUserWizardPropsInterfa
                                 : sendExternalInvitation(values as UserInviteInterface)
                         }
                         setFinishButtonDisabled={ setFinishButtonDisabled }
+                        consoleRolesList={ consoleRolesList?.Resources }
+                        isConsoleRolesListLoading={
+                            isApplicationListRequestLoading
+                            || isConsoleRolesListRequestLoading
+                        }
                     />
                 </Modal.Content>
                 <Modal.Actions>
