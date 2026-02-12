@@ -28,20 +28,20 @@ This PR adds a **reference implementation** for developers who need to add new f
   4. `features/admin.core.v1/configs/app.ts`
 
 ### Comprehensive Documentation
-- 📘 **[README.md](features/admin.example-feature.v1/README.md)** - Complete feature development guide
-- 🚀 **[QUICK_START.md](features/admin.example-feature.v1/QUICK_START.md)** - 10-minute setup guide
-- 🔌 **[INTEGRATION_GUIDE.md](features/admin.example-feature.v1/INTEGRATION_GUIDE.md)** - Step-by-step i18n integration
-- 🏗️ **[ARCHITECTURE.md](features/admin.example-feature.v1/ARCHITECTURE.md)** - Visual architecture diagrams
-- 📚 **[INDEX.md](features/admin.example-feature.v1/INDEX.md)** - Documentation navigation guide
-- 📋 **[PR_DESCRIPTION.md](PR_DESCRIPTION.md)** - Detailed PR overview and checklist
+- 📘 **[README.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/README.md)** - Complete feature development guide
+- 🚀 **[QUICK_START.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/QUICK_START.md)** - 10-minute setup guide
+- 🔌 **[INTEGRATION_GUIDE.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/INTEGRATION_GUIDE.md)** - Step-by-step i18n integration
+- 🏗️ **[ARCHITECTURE.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/ARCHITECTURE.md)** - Visual architecture diagrams
+- 📚 **[INDEX.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/INDEX.md)** - Documentation navigation guide
+- 📋 **[PR_DESCRIPTION.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/PR_DESCRIPTION.md)** - Detailed PR overview and checklist
 
 
 ## 🚀 Quick Start for Developers
 
-1. **Read the overview**: Start with [PR_DESCRIPTION.md](PR_DESCRIPTION.md)
-2. **Fast implementation**: Follow [QUICK_START.md](features/admin.example-feature.v1/QUICK_START.md) (~10 min)
-3. **Deep dive**: Read [README.md](features/admin.example-feature.v1/README.md) for complete understanding
-4. **Step-by-step**: Use [INTEGRATION_GUIDE.md](features/admin.example-feature.v1/INTEGRATION_GUIDE.md) for i18n setup
+1. **Read the overview**: Start with [PR_DESCRIPTION.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/PR_DESCRIPTION.md)
+2. **Fast implementation**: Follow [QUICK_START.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/QUICK_START.md) (~10 min)
+3. **Deep dive**: Read [README.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/README.md) for complete understanding
+4. **Step-by-step**: Use [INTEGRATION_GUIDE.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/INTEGRATION_GUIDE.md) for i18n setup
 
 ## ⚠️ Scope
 
