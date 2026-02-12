@@ -33,7 +33,6 @@ import { getBrandingResourceEndpoints } from "@wso2is/admin.branding.v1/configs/
 import { getCertificatesResourceEndpoints } from "@wso2is/admin.certificates.v1";
 import { getClaimResourceEndpoints } from "@wso2is/admin.claims.v1/configs/endpoints";
 import { ClaimManagementConstants } from "@wso2is/admin.claims.v1/constants/claim-management-constants";
-import { getConnectionResourceEndpoints } from "@wso2is/admin.connections.v1";
 import { getEmailTemplatesResourceEndpoints } from "@wso2is/admin.email-templates.v1";
 import { getExtendedFeatureResourceEndpoints } from "@wso2is/admin.extensions.v1/configs/endpoints";
 import { getFeatureGateResourceEndpoints } from "@wso2is/admin.feature-gate.v1/configs/endpoints";
@@ -329,7 +328,6 @@ export class Config {
             ...getCertificatesResourceEndpoints(this.resolveServerHostFromConfig()),
             ...getIDVPResourceEndpoints(this.resolveServerHost()),
             ...getEmailTemplatesResourceEndpoints(this.resolveServerHost()),
-            ...getConnectionResourceEndpoints(this.resolveServerHost()),
             ...getRolesResourceEndpoints(this.resolveServerHost(), this.resolveServerHostFromConfig()),
             ...getServerConfigurationsResourceEndpoints(this.resolveServerHost()),
             ...getUsersResourceEndpoints(this.resolveServerHost()),
@@ -367,8 +365,16 @@ export class Config {
             CORSOrigins: `${ this.resolveServerHostFromConfig() }/api/server/v1/cors/origins`,
             actions: "",
             asyncStatus: `${ this.resolveServerHost(false, true) }/api/server/v1/async-operations`,
+            authenticatorTags: "",
+            authenticators: "",
+            customAuthenticators: "",
+            extensions: "",
+            fidoConfigs: "",
+            identityProviders: "",
+            localAuthenticators: "",
             // TODO: Remove this endpoint and use ID token to get the details
             me: `${ this.getDeploymentConfig()?.serverHost }/scim2/Me`,
+            multiFactorAuthenticators: "",
             saml2Meta: `${ this.resolveServerHost(false, true) }/identity/metadata/saml2`,
             wellKnown: `${ this.resolveServerHost(false, true) }/oauth2/token/.well-known/openid-configuration`
         };
