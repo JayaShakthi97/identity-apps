@@ -27,13 +27,16 @@ A minimal feature module showcasing the required file structure:
 admin.example-feature.v1/
 ├── constants/
 │   └── example-feature-constants.ts    # Feature constants & feature flags
+├── docs/                               # Documentation files
+│   ├── ARCHITECTURE.md                 # Visual architecture diagrams
+│   ├── INDEX.md                        # Documentation navigation
+│   ├── INTEGRATION_GUIDE.md            # Step-by-step integration instructions
+│   ├── QUICK_START.md                  # Quick start guide
+│   └── README.md                       # Feature documentation
 ├── models/
 │   └── example-feature.ts              # TypeScript interfaces
 ├── pages/
 │   └── example-feature-page.tsx        # Main page component
-├── CHANGELOG.md                        # Version history
-├── INTEGRATION_GUIDE.md                # Step-by-step integration instructions
-├── README.md                           # Feature documentation
 ├── package.json                        # Dependencies & scripts
 ├── rollup.config.cjs                   # Build configuration
 └── tsconfig.json                       # TypeScript configuration
@@ -44,8 +47,8 @@ admin.example-feature.v1/
 - **`constants/example-feature-constants.ts`**: Demonstrates how to define feature-specific constants and feature dictionaries for permission mappings
 - **`models/example-feature.ts`**: Shows TypeScript interface patterns for data models
 - **`pages/example-feature-page.tsx`**: Minimal page component example using `PageLayout`
-- **`README.md`**: Comprehensive documentation on feature structure and development guidelines
-- **`INTEGRATION_GUIDE.md`**: Detailed step-by-step guide for i18n namespace registration (route configuration covered in separate PR)
+- **`docs/README.md`**: Comprehensive documentation on feature structure and development guidelines
+- **`docs/INTEGRATION_GUIDE.md`**: Detailed step-by-step guide for i18n namespace registration (route configuration covered in separate PR)
 
 ### 2. Translation Files in `modules/i18n`
 
@@ -93,7 +96,7 @@ exampleFeature: {
 
 ### 3. Integration Documentation
 
-**`INTEGRATION_GUIDE.md`** provides complete instructions for i18n namespace registration:
+**`docs/INTEGRATION_GUIDE.md`** provides complete instructions for i18n namespace registration:
 
 - Creating namespace interface and translation files
 - Exporting from index files
@@ -146,7 +149,7 @@ exampleFeature: {
 2. **Update Package Info**:
    - Modify `package.json` (name, description, version)
    - Update `CHANGELOG.md`
-   - Customize `README.md`
+   - Customize `docs/README.md`
 
 3. **Implement Your Logic**:
    - Add API integration (`api/` folder)
@@ -161,13 +164,13 @@ exampleFeature: {
    - Add namespace constant in `modules/i18n/src/constants.ts`
 
 5. **Integrate to Console**:
-   - Follow `INTEGRATION_GUIDE.md` step-by-step
+   - Follow `docs/INTEGRATION_GUIDE.md` step-by-step
    - Add routes, paths, and menu items
    - Test thoroughly
 
 ### For Understanding the Architecture:
 
-1. **Read the README**: Start with `admin.example-feature.v1/README.md`
+1. **Read the README**: Start with `admin.example-feature.v1/docs/README.md`
 2. **Study the Structure**: Examine the file organization and naming conventions
 3. **Review the Code**: Look at how constants, models, and pages are structured
 4. **Check Real Examples**: Compare with existing features like `admin.agents.v1` or `admin.actions.v1`
@@ -183,8 +186,11 @@ exampleFeature: {
 - ✨ `tsconfig.json`
 - ✨ `rollup.config.cjs`
 - ✨ `CHANGELOG.md`
-- ✨ `README.md`
-- ✨ `INTEGRATION_GUIDE.md`
+- ✨ `docs/README.md`
+- ✨ `docs/INTEGRATION_GUIDE.md`
+- ✨ `docs/QUICK_START.md`
+- ✨ `docs/ARCHITECTURE.md`
+- ✨ `docs/INDEX.md`
 - ✨ `constants/example-feature-constants.ts`
 - ✨ `models/example-feature.ts`
 - ✨ `pages/example-feature-page.tsx`
@@ -220,8 +226,12 @@ identity-apps/
 │   │   ├── pages/
 │   │   │   └── example-feature-page.tsx
 │   │   ├── CHANGELOG.md
-│   │   ├── INTEGRATION_GUIDE.md           # 📚 Integration instructions
-│   │   ├── README.md                      # 📚 Feature documentation
+│   │   ├── docs/                          # 📚 Documentation files
+│   │   │   ├── ARCHITECTURE.md           # Visual architecture diagrams
+│   │   │   ├── INDEX.md                  # Documentation navigation
+│   │   │   ├── INTEGRATION_GUIDE.md      # Integration instructions
+│   │   │   ├── QUICK_START.md            # Quick start guide
+│   │   │   └── README.md                 # Feature documentation
 │   │   ├── package.json
 │   │   ├── rollup.config.cjs
 │   │   └── tsconfig.json
@@ -254,7 +264,7 @@ identity-apps/
 
 All documentation is self-contained within the feature module:
 
-1. **`README.md`**: Complete feature documentation
+1. **`docs/README.md`**: Complete feature documentation
    - File structure explanation
    - Component descriptions
    - Integration steps
@@ -262,7 +272,7 @@ All documentation is self-contained within the feature module:
    - Best practices
    - References to real features
 
-2. **`INTEGRATION_GUIDE.md`**: Step-by-step integration guide
+2. **`docs/INTEGRATION_GUIDE.md`**: Step-by-step integration guide
    - Route configuration
    - Path constants
    - Side panel configuration
@@ -285,7 +295,7 @@ When creating a new feature, ensure you have:
 - [ ] Created `models/` folder with TypeScript interfaces
 - [ ] Created `pages/` folder with page components
 - [ ] Added `CHANGELOG.md` for version tracking
-- [ ] Added `README.md` for documentation
+- [ ] Added comprehensive documentation in `docs/` folder
 
 ### i18n & Translation Setup:
 - [ ] Created namespace interface in `models/namespaces/[feature]-ns.ts`
@@ -372,8 +382,10 @@ If you find improvements or missing information, please update the documentation
 ## 🔗 Quick Navigation
 
 - **Feature Module**: [features/admin.example-feature.v1/](./admin.example-feature.v1/)
-- **Feature README**: [features/admin.example-feature.v1/README.md](./admin.example-feature.v1/README.md)
-- **Integration Guide**: [features/admin.example-feature.v1/INTEGRATION_GUIDE.md](./admin.example-feature.v1/INTEGRATION_GUIDE.md)
+- **Feature README**: [features/admin.example-feature.v1/docs/README.md](./features/admin.example-feature.v1/docs/README.md)
+- **Integration Guide**: [features/admin.example-feature.v1/docs/INTEGRATION_GUIDE.md](./features/admin.example-feature.v1/docs/INTEGRATION_GUIDE.md)
+- **Quick Start**: [features/admin.example-feature.v1/docs/QUICK_START.md](./features/admin.example-feature.v1/docs/QUICK_START.md)
+- **Architecture**: [features/admin.example-feature.v1/docs/ARCHITECTURE.md](./features/admin.example-feature.v1/docs/ARCHITECTURE.md)
 - **Constants**: [features/admin.example-feature.v1/constants/example-feature-constants.ts](./admin.example-feature.v1/constants/example-feature-constants.ts)
 - **Models**: [features/admin.example-feature.v1/models/example-feature.ts](./admin.example-feature.v1/models/example-feature.ts)
 - **Page Component**: [features/admin.example-feature.v1/pages/example-feature-page.tsx](./admin.example-feature.v1/pages/example-feature-page.tsx)

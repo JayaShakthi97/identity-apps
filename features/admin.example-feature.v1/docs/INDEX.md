@@ -86,13 +86,14 @@ This reference includes multiple documentation files, each serving a specific pu
 ### Documentation Files (What you're reading)
 ```
 admin.example-feature.v1/
-├── PR_DESCRIPTION.md         # Main PR overview (in root)
-├── README.md                 # Comprehensive guide
-├── QUICK_START.md           # Fast-track guide
-├── INTEGRATION_GUIDE.md     # Integration steps
-├── ARCHITECTURE.md          # Visual diagrams
-├── INDEX.md                 # This file
-└── CHANGELOG.md             # Version history
+└── docs/                     # Documentation files
+    ├── ARCHITECTURE.md       # Visual diagrams
+    ├── INDEX.md              # This file
+    ├── INTEGRATION_GUIDE.md  # Integration steps
+    ├── QUICK_START.md        # Fast-track guide
+    └── README.md             # Comprehensive guide
+
+(PR_DESCRIPTION.md is in the workspace root)
 ```
 
 ### Implementation Files (The actual code)
