@@ -288,7 +288,8 @@ export class Config {
                 I18nConstants.AGENTS_NAMESPACE,
                 I18nConstants.FLOWS_NAMESPACE,
                 I18nConstants.COMMON_USERS_NAMESPACE,
-                I18nConstants.VERIFIABLE_CREDENTIALS_NAMESPACE
+                I18nConstants.VERIFIABLE_CREDENTIALS_NAMESPACE,
+                I18nConstants.EXAMPLE_FEATURE_NAMESPACE
             ],
             preload: []
         };

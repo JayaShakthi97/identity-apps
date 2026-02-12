@@ -83,6 +83,7 @@ export const meta: LocaleMeta = {
         I18nModuleConstants.AGENTS_NAMESPACE,
         I18nModuleConstants.FLOWS_NAMESPACE,
         I18nModuleConstants.COMMON_USERS_NAMESPACE,
-        I18nModuleConstants.VERIFIABLE_CREDENTIALS_NAMESPACE
+        I18nModuleConstants.VERIFIABLE_CREDENTIALS_NAMESPACE,
+        I18nModuleConstants.EXAMPLE_FEATURE_NAMESPACE
     ]
 };
