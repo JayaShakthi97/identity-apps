@@ -29,11 +29,10 @@ This PR adds a **reference implementation** for developers who need to add new f
 
 ### Comprehensive Documentation
 - 📘 **[README.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/README.md)** - Complete feature development guide
-- 🚀 **[QUICK_START.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/QUICK_START.md)** - 10-minute setup guide
+- 🚀 **[QUICK_START.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/QUICK_START.md)** - Fast-track setup guide
 - 🔌 **[INTEGRATION_GUIDE.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/INTEGRATION_GUIDE.md)** - Step-by-step i18n integration
 - 🏗️ **[ARCHITECTURE.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/ARCHITECTURE.md)** - Visual architecture diagrams
-- 📚 **[INDEX.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/INDEX.md)** - Documentation navigation guide
-- 📋 **[PR_DESCRIPTION.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/PR_DESCRIPTION.md)** - Detailed PR overview and checklist
+- 🗺️ **[INDEX.md](https://github.com/JayaShakthi97/identity-apps/blob/reference/01-feature-with-i18n/features/admin.example-feature.v1/docs/INDEX.md)** - Documentation navigation guide
 
 
 ## 🚀 Quick Start for Developers

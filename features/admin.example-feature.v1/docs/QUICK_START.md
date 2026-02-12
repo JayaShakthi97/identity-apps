@@ -1,12 +1,12 @@
 # Quick Start: Adding a New Feature to Console
 
-**TL;DR**: Follow these steps to add a new feature to the console. For detailed information, see the [full PR description](../PR_DESCRIPTION.md) and [feature README](./README.md).
+Follow these steps to add a new feature to the console. For detailed information, see the [feature README](./README.md).
 
 ---
 
-## 🚀 Quick Steps
+## 🚀 Steps
 
-### 1. Create Feature Module (5 min)
+### 1. Create Feature Module
 
 ```bash
 # Navigate to features directory
@@ -97,7 +97,7 @@ const MyFeaturePage: FunctionComponent<MyFeaturePageInterface> = ({
 export default MyFeaturePage;
 ```
 
-### 3. Add i18n Translations (3 min)
+### 3. Add i18n Translations
 
 #### Create `modules/i18n/src/models/namespaces/my-feature-ns.ts`
 ```typescript
@@ -164,7 +164,7 @@ public static readonly MY_FEATURE_NAMESPACE: string =
 I18nConstants.MY_FEATURE_NAMESPACE
 ```
 
-### 4. Build & Test (2 min)
+### 4. Build & Test
 
 ```bash
 # Install dependencies
@@ -302,7 +302,7 @@ pnpm build
 For detailed information, see:
 - [Feature README](./README.md) - Complete feature documentation
 - [Integration Guide](./INTEGRATION_GUIDE.md) - Detailed integration steps
-- [PR Description](../PR_DESCRIPTION.md) - Full reference guide
+- [INDEX](./INDEX.md) - Documentation navigation
 
 ---
 

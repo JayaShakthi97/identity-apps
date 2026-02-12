@@ -6,22 +6,8 @@ Welcome to the Example Feature reference implementation! This serves as a compre
 
 This reference includes multiple documentation files, each serving a specific purpose:
 
-### 1. [PR_DESCRIPTION.md](../../../PR_DESCRIPTION.md) ⭐ START HERE
-**Purpose**: Main entry point and overview of the entire reference PR
-
-**What you'll find**:
-- Purpose and goals of this reference
-- Complete file listing
-- High-level architecture overview
-- Checklist for new features
-- Links to all resources
-
-**Best for**: Getting an overview of what's included and understanding the big picture
-
----
-
-### 2. [QUICK_START.md](./QUICK_START.md) 🚀 TL;DR VERSION
-**Purpose**: Fast-track guide to creating a feature in ~10 minutes
+### 1. [QUICK_START.md](./QUICK_START.md) 🚀 START HERE
+**Purpose**: Fast-track guide to creating a feature
 
 **What you'll find**:
 - Step-by-step quick instructions
@@ -30,13 +16,13 @@ This reference includes multiple documentation files, each serving a specific pu
 - i18n namespace registration
 - Troubleshooting tips
 
-**Best for**: Experienced developers who want to get started quickly without reading extensive docs
+**Best for**: Getting started quickly
 
 **Note**: Focuses on feature structure and i18n setup. Route configuration covered separately.
 
 ---
 
-### 3. [README.md](./README.md) 📖 COMPREHENSIVE GUIDE
+### 2. [README.md](./README.md) 📖 COMPREHENSIVE GUIDE
 **Purpose**: Complete feature development guide with detailed explanations
 
 **What you'll find**:
@@ -51,7 +37,7 @@ This reference includes multiple documentation files, each serving a specific pu
 
 ---
 
-### 4. [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) 🔌 I18N INTEGRATION
+### 3. [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) 🔌 I18N INTEGRATION
 **Purpose**: Detailed step-by-step guide for i18n namespace registration
 
 **What you'll find**:
@@ -67,7 +53,7 @@ This reference includes multiple documentation files, each serving a specific pu
 
 ---
 
-### 5. [ARCHITECTURE.md](./ARCHITECTURE.md) 🏗️ VISUAL OVERVIEW
+### 4. [ARCHITECTURE.md](./ARCHITECTURE.md) 🏗️ VISUAL OVERVIEW
 **Purpose**: Visual architecture diagrams and flow charts
 
 **What you'll find**:
@@ -92,8 +78,6 @@ admin.example-feature.v1/
     ├── INTEGRATION_GUIDE.md  # Integration steps
     ├── QUICK_START.md        # Fast-track guide
     └── README.md             # Comprehensive guide
-
-(PR_DESCRIPTION.md is in the workspace root)
 ```
 
 ### Implementation Files (The actual code)
@@ -127,38 +111,30 @@ modules/i18n/src/
 
 Choose your path based on your experience and needs:
 
-### Path 1: Quick Implementation (For Experienced Devs)
+### Path 1: Quick Implementation
 1. Read [QUICK_START.md](./QUICK_START.md)
 2. Copy the example files
 3. Modify for your feature
 4. Follow [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) steps 1-4
 5. Build and test
 
-**Time**: ~10-15 minutes
+---
+
+### Path 2: Comprehensive Learning
+1. Study [ARCHITECTURE.md](./ARCHITECTURE.md) - Understand the architecture
+2. Read [README.md](./README.md) - Learn the details
+3. Review example code in implementation files
+4. Follow [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) - Step-by-step integration
+5. Reference [QUICK_START.md](./QUICK_START.md) - Quick patterns
 
 ---
 
-### Path 2: Comprehensive Learning (For New Developers)
-1. Read [PR_DESCRIPTION.md](../../../PR_DESCRIPTION.md) - Overview
-2. Study [ARCHITECTURE.md](./ARCHITECTURE.md) - Understand the architecture
-3. Read [README.md](./README.md) - Learn the details
-4. Review example code in implementation files
-5. Follow [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) - Step-by-step integration
-6. Reference [QUICK_START.md](./QUICK_START.md) - Quick patterns
-
-**Time**: ~2-3 hours
-
----
-
-### Path 3: Reference-Based (For Specific Questions)
+### Path 3: Reference-Based
 Use this as a reference when you need to:
 - Add a new constant → See `constants/example-feature-constants.ts`
 - Define a model → See `models/example-feature.ts`
 - Create a page → See `pages/example-feature-page.tsx`
 - Add translations → See [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) Step 1
-- Configure routes → See [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md) Step 2
-
-**Time**: As needed
 
 ---
 
@@ -176,8 +152,8 @@ Use this as a reference when you need to:
 ### "I want to integrate my feature to console"
 → Follow [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)
 
-### "I want to see what files were created"
-→ Check [PR_DESCRIPTION.md](../../../PR_DESCRIPTION.md)
+### "I want to navigate the documentation"
+→ Use this [INDEX.md](./INDEX.md) file
 
 ### "I want to understand translations"
 → See [README.md](./README.md) Step 1 and [INTEGRATION_GUIDE.md](./INTEGRATION_GUIDE.md)
@@ -198,7 +174,6 @@ Use this as a reference when you need to:
 | **README.md** | Long | Comprehensive | Complete understanding |
 | **INTEGRATION_GUIDE.md** | Medium | Detailed | Console integration |
 | **ARCHITECTURE.md** | Medium | Visual | Understanding structure |
-| **PR_DESCRIPTION.md** | Long | Overview | Full reference |
 | **INDEX.md** | Short | Navigation | Finding docs |
 
 ---
@@ -240,7 +215,6 @@ When creating a new feature:
 - [ ] Export from i18n index files
 - [ ] Register namespace in 4 locations
 - [ ] Build and test i18n module
-- [ ] Review checklist in [PR_DESCRIPTION.md](../../../PR_DESCRIPTION.md)
 
 **For route integration**: Refer to separate routing guide.
 
@@ -288,7 +262,7 @@ Start Here
     │   └──► QUICK_START.md ──► INTEGRATION_GUIDE.md ──► Done!
     │
     ├── Learning the System?
-    │   └──► PR_DESCRIPTION.md ──► ARCHITECTURE.md ──► README.md ──► INTEGRATION_GUIDE.md ──► Done!
+    │   └──► ARCHITECTURE.md ──► README.md ──► INTEGRATION_GUIDE.md ──► Done!
     │
     └── Need Reference?
         └──► INDEX.md (this file) ──► Specific doc based on need
@@ -298,7 +272,7 @@ Start Here
 
 ## 🎉 Ready to Start?
 
-**Recommended**: Start with [QUICK_START.md](./QUICK_START.md) if you're ready to create a feature, or [PR_DESCRIPTION.md](../../../PR_DESCRIPTION.md) if you want a complete overview first.
+**Recommended**: Start with [QUICK_START.md](./QUICK_START.md)
 
 **Happy Coding!** 🚀
 
