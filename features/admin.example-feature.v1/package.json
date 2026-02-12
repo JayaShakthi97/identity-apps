@@ -1,0 +1,39 @@
+{
+    "private": true,
+    "name": "@wso2is/admin.example-feature.v1",
+    "version": "1.0.0",
+    "description": "Example feature for WSO2 Identity Server console - Reference for new feature development",
+    "author": "WSO2",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "@asgardeo/auth-react": "^5.1.2",
+        "@oxygen-ui/react": "^2.3.4",
+        "@oxygen-ui/react-icons": "^2.3.4",
+        "@wso2is/access-control": "^3.3.20",
+        "@wso2is/admin.core.v1": "^2.50.2",
+        "@wso2is/admin.extensions.v1": "^2.40.19",
+        "@wso2is/core": "^2.12.7",
+        "@wso2is/i18n": "^2.32.1",
+        "@wso2is/react-components": "^2.9.25",
+        "react-i18next": "^11.18.5",
+        "react-router-dom": "~5.3.4"
+    },
+    "devDependencies": {
+        "@rollup/plugin-dynamic-import-vars": "^2.1.2",
+        "@rollup/plugin-image": "^3.0.3",
+        "rollup-plugin-generate-package-json": "^3.2.0",
+        "rollup-plugin-polyfill-node": "^0.13.0",
+        "rollup-plugin-scss": "^4.0.0",
+        "rollup-plugin-styles": "^4.0.0",
+        "rollup-plugin-svg": "^2.0.0",
+        "typescript": "~5.6.3"
+    },
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "scripts": {
+        "build": "pnpm clean && rollup -c",
+        "clean": "rm -rf dist"
+    }
+}

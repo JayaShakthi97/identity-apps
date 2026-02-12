@@ -337,6 +337,11 @@ export class I18nConstants {
         I18nModuleConstants.VERIFIABLE_CREDENTIALS_NAMESPACE;
 
     /**
+     * Example Feature namespace.
+     */
+    public static readonly EXAMPLE_FEATURE_NAMESPACE: string = I18nModuleConstants.EXAMPLE_FEATURE_NAMESPACE;
+
+    /**
      * Locations of the I18n namespaces.
      */
     public static readonly BUNDLE_NAMESPACE_DIRECTORIES: Map<string, string> = new Map<string, string>([
@@ -399,7 +404,8 @@ export class I18nConstants {
         [ I18nConstants.AGENTS_NAMESPACE, "portals" ],
         [ I18nConstants.FLOWS_NAMESPACE, "portals" ],
         [ I18nConstants.COMMON_USERS_NAMESPACE, "portals" ],
-        [ I18nConstants.VERIFIABLE_CREDENTIALS_NAMESPACE, "portals" ]
+        [ I18nConstants.VERIFIABLE_CREDENTIALS_NAMESPACE, "portals" ],
+        [ I18nConstants.EXAMPLE_FEATURE_NAMESPACE, "portals" ]
     ]);
 
     /**

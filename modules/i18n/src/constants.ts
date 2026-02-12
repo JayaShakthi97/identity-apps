@@ -406,6 +406,11 @@ export class I18nModuleConstants {
     public static readonly FLOWS_NAMESPACE: string = "flows";
 
     /**
+     * Example Feature namespace.
+     */
+    public static readonly EXAMPLE_FEATURE_NAMESPACE: string = "exampleFeature";
+
+    /**
      * Constant representing the text direction handling attribute.
      */
     public static readonly TEXT_DIRECTION_ATTRIBUTE: string = "dir";
