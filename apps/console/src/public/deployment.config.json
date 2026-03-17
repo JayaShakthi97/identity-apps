@@ -631,9 +631,7 @@
                 }
             },
             "approvalWorkflows": {
-                "disabledFeatures": [
-                    "approvalWorkflows.rules"
-                ],
+                "disabledFeatures": [],
                 "enabled": true,
                 "featureFlags": [],
                 "scopes": {
