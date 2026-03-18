@@ -1,5 +1,14 @@
 # @wso2is/i18n
 
+## 2.37.2
+
+### Patch Changes
+
+- [#9836](https://github.com/wso2/identity-apps/pull/9836) [`7d97c818933f53099469f9d249896db509666191`](https://github.com/wso2/identity-apps/commit/7d97c818933f53099469f9d249896db509666191) Thanks [@github-actions](https://github.com/apps/github-actions)! - Update the workflow rule delete confirmation modal header.
+
+- Updated dependencies [[`005286e460c4f64a37136efbc0f59a519fbf7776`](https://github.com/wso2/identity-apps/commit/005286e460c4f64a37136efbc0f59a519fbf7776)]:
+  - @wso2is/core@2.12.9
+
 ## 2.37.1
 
 ### Patch Changes
