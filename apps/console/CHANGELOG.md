@@ -1,5 +1,14 @@
 # @wso2is/console
 
+## 2.106.2
+
+### Patch Changes
+
+- [#9819](https://github.com/wso2/identity-apps/pull/9819) [`6783c5fc9fda2d68ab1828cc6801bdc7ebb3d038`](https://github.com/wso2/identity-apps/commit/6783c5fc9fda2d68ab1828cc6801bdc7ebb3d038) Thanks [@github-actions](https://github.com/apps/github-actions)! - Administrator user listing improvement
+
+- Updated dependencies [[`c1ed574370af14af1bf6a9daf6ea50901593ec0c`](https://github.com/wso2/identity-apps/commit/c1ed574370af14af1bf6a9daf6ea50901593ec0c)]:
+  - @wso2is/admin.console-settings.v1@2.26.11
+
 ## 2.106.1
 
 ### Patch Changes
