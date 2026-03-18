@@ -1,5 +1,15 @@
 # @wso2is/identity-apps-core
 
+## 3.8.1
+
+### Patch Changes
+
+- [#9808](https://github.com/wso2/identity-apps/pull/9808) [`1b22d3c26a558f5fe5757b8a76b1b6fa06319caa`](https://github.com/wso2/identity-apps/commit/1b22d3c26a558f5fe5757b8a76b1b6fa06319caa) Thanks [@github-actions](https://github.com/apps/github-actions)! - improve encodings of mobile.jsp
+
+* [#9799](https://github.com/wso2/identity-apps/pull/9799) [`0ac8847295ce1a999d9ef6816f44b2f72ca9b046`](https://github.com/wso2/identity-apps/commit/0ac8847295ce1a999d9ef6816f44b2f72ca9b046) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix proxy context path not prefixing to policy URLs issue
+
+- [#9795](https://github.com/wso2/identity-apps/pull/9795) [`a70703bf5c6fc97189f835c48a8900314649b4fd`](https://github.com/wso2/identity-apps/commit/a70703bf5c6fc97189f835c48a8900314649b4fd) Thanks [@github-actions](https://github.com/apps/github-actions)! - Refactor isMultiAuthAvailable method to include current authenticator check
+
 ## 3.8.0
 
 ### Minor Changes
