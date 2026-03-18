@@ -1,5 +1,45 @@
 # @wso2is/console
 
+## 2.106.1
+
+### Patch Changes
+
+- [#9801](https://github.com/wso2/identity-apps/pull/9801) [`cf05ed2fd4f39ffbeac931ea7600e574a911c852`](https://github.com/wso2/identity-apps/commit/cf05ed2fd4f39ffbeac931ea7600e574a911c852) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add additional ciba configs
+
+* [#9792](https://github.com/wso2/identity-apps/pull/9792) [`35feb2c5e106472d103d8f0889b9b914a58b1bc8`](https://github.com/wso2/identity-apps/commit/35feb2c5e106472d103d8f0889b9b914a58b1bc8) Thanks [@github-actions](https://github.com/apps/github-actions)! - Improve outbound provisioning wizard
+
+- [#9804](https://github.com/wso2/identity-apps/pull/9804) [`9365602a843e6ace6f4679917bd08650a3579eec`](https://github.com/wso2/identity-apps/commit/9365602a843e6ace6f4679917bd08650a3579eec) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add Individual config based legacy flow enablement capabilities.
+
+* [#9789](https://github.com/wso2/identity-apps/pull/9789) [`220c2350fb7f564e578e6b07863db69971e690f4`](https://github.com/wso2/identity-apps/commit/220c2350fb7f564e578e6b07863db69971e690f4) Thanks [@github-actions](https://github.com/apps/github-actions)! - Hide save button in Shared Access tab when user lacks update permission
+
+- [#9818](https://github.com/wso2/identity-apps/pull/9818) [`019b07d7570a2a7f3392eaeb482fb223140879a1`](https://github.com/wso2/identity-apps/commit/019b07d7570a2a7f3392eaeb482fb223140879a1) Thanks [@github-actions](https://github.com/apps/github-actions)! - Hide CIBA grant from public clients
+
+* [#9816](https://github.com/wso2/identity-apps/pull/9816) [`d139a44465ad17a5e6fbdc2df8fff8077aac386f`](https://github.com/wso2/identity-apps/commit/d139a44465ad17a5e6fbdc2df8fff8077aac386f) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix verifiable credentail creation redirect
+
+- [#9798](https://github.com/wso2/identity-apps/pull/9798) [`a2f7a4bba6bc2bec483007473619bb0fdc87f2be`](https://github.com/wso2/identity-apps/commit/a2f7a4bba6bc2bec483007473619bb0fdc87f2be) Thanks [@shashimalcse](https://github.com/shashimalcse)! - Hide VC attributes from sub orgs
+
+- Updated dependencies [[`cf05ed2fd4f39ffbeac931ea7600e574a911c852`](https://github.com/wso2/identity-apps/commit/cf05ed2fd4f39ffbeac931ea7600e574a911c852), [`35feb2c5e106472d103d8f0889b9b914a58b1bc8`](https://github.com/wso2/identity-apps/commit/35feb2c5e106472d103d8f0889b9b914a58b1bc8), [`9365602a843e6ace6f4679917bd08650a3579eec`](https://github.com/wso2/identity-apps/commit/9365602a843e6ace6f4679917bd08650a3579eec), [`220c2350fb7f564e578e6b07863db69971e690f4`](https://github.com/wso2/identity-apps/commit/220c2350fb7f564e578e6b07863db69971e690f4), [`019b07d7570a2a7f3392eaeb482fb223140879a1`](https://github.com/wso2/identity-apps/commit/019b07d7570a2a7f3392eaeb482fb223140879a1), [`d139a44465ad17a5e6fbdc2df8fff8077aac386f`](https://github.com/wso2/identity-apps/commit/d139a44465ad17a5e6fbdc2df8fff8077aac386f), [`a2f7a4bba6bc2bec483007473619bb0fdc87f2be`](https://github.com/wso2/identity-apps/commit/a2f7a4bba6bc2bec483007473619bb0fdc87f2be)]:
+  - @wso2is/admin.applications.v1@2.41.22
+  - @wso2is/i18n@2.37.1
+  - @wso2is/admin.connections.v1@2.36.8
+  - @wso2is/admin.server-configurations.v1@2.38.7
+  - @wso2is/admin.claims.v1@2.30.4
+  - @wso2is/admin.users.v1@2.37.15
+  - @wso2is/admin.core.v1@2.54.24
+  - @wso2is/admin.extensions.v1@2.40.29
+  - @wso2is/admin.verifiable-credentials.v1@1.0.4
+  - @wso2is/admin.agents.v1@1.0.183
+  - @wso2is/admin.branding.v1@2.32.124
+  - @wso2is/admin.onboarding.v1@1.0.39
+  - @wso2is/admin.roles.v2@2.27.338
+  - @wso2is/admin.ask-password-flow-builder.v1@1.1.168
+  - @wso2is/admin.email-management.v1@2.25.332
+  - @wso2is/admin.flows.v1@1.0.137
+  - @wso2is/admin.home.v1@1.7.148
+  - @wso2is/admin.password-recovery-flow-builder.v1@1.1.168
+  - @wso2is/admin.approval-workflows.v1@1.2.6
+  - @wso2is/admin.registration-flow-builder.v1@0.10.128
+
 ## 2.106.0
 
 ### Minor Changes

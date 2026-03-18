@@ -1,5 +1,11 @@
 # @wso2is/i18n
 
+## 2.37.1
+
+### Patch Changes
+
+- [#9801](https://github.com/wso2/identity-apps/pull/9801) [`cf05ed2fd4f39ffbeac931ea7600e574a911c852`](https://github.com/wso2/identity-apps/commit/cf05ed2fd4f39ffbeac931ea7600e574a911c852) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add additional ciba configs
+
 ## 2.37.0
 
 ### Minor Changes

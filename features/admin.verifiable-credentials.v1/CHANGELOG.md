@@ -1,5 +1,17 @@
 # @wso2is/admin.verifiable-credentials.v1
 
+## 1.0.4
+
+### Patch Changes
+
+- [#9816](https://github.com/wso2/identity-apps/pull/9816) [`d139a44465ad17a5e6fbdc2df8fff8077aac386f`](https://github.com/wso2/identity-apps/commit/d139a44465ad17a5e6fbdc2df8fff8077aac386f) Thanks [@github-actions](https://github.com/apps/github-actions)! - Fix verifiable credentail creation redirect
+
+- Updated dependencies [[`cf05ed2fd4f39ffbeac931ea7600e574a911c852`](https://github.com/wso2/identity-apps/commit/cf05ed2fd4f39ffbeac931ea7600e574a911c852), [`9365602a843e6ace6f4679917bd08650a3579eec`](https://github.com/wso2/identity-apps/commit/9365602a843e6ace6f4679917bd08650a3579eec), [`019b07d7570a2a7f3392eaeb482fb223140879a1`](https://github.com/wso2/identity-apps/commit/019b07d7570a2a7f3392eaeb482fb223140879a1), [`a2f7a4bba6bc2bec483007473619bb0fdc87f2be`](https://github.com/wso2/identity-apps/commit/a2f7a4bba6bc2bec483007473619bb0fdc87f2be)]:
+  - @wso2is/i18n@2.37.1
+  - @wso2is/admin.claims.v1@2.30.4
+  - @wso2is/admin.core.v1@2.54.24
+  - @wso2is/admin.extensions.v1@2.40.29
+
 ## 1.0.3
 
 ### Patch Changes
