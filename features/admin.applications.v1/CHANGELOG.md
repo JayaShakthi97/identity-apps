@@ -1,5 +1,21 @@
 # @wso2is/admin.applications.v1
 
+## 2.41.23
+
+### Patch Changes
+
+- [#9841](https://github.com/wso2/identity-apps/pull/9841) [`ab43ebe8a615b4c9895a41747b04a25d4089d762`](https://github.com/wso2/identity-apps/commit/ab43ebe8a615b4c9895a41747b04a25d4089d762) Thanks [@github-actions](https://github.com/apps/github-actions)! - Remove CIBA selection when public client is enabled
+
+- Updated dependencies [[`005286e460c4f64a37136efbc0f59a519fbf7776`](https://github.com/wso2/identity-apps/commit/005286e460c4f64a37136efbc0f59a519fbf7776), [`7d97c818933f53099469f9d249896db509666191`](https://github.com/wso2/identity-apps/commit/7d97c818933f53099469f9d249896db509666191)]:
+  - @wso2is/admin.core.v1@2.54.25
+  - @wso2is/core@2.12.9
+  - @wso2is/i18n@2.37.2
+  - @wso2is/admin.users.v1@2.37.16
+  - @wso2is/admin.branding.v1@2.32.125
+  - @wso2is/admin.server-configurations.v1@2.38.8
+  - @wso2is/admin.roles.v2@2.27.339
+  - @wso2is/admin.connections.v1@2.36.9
+
 ## 2.41.22
 
 ### Patch Changes

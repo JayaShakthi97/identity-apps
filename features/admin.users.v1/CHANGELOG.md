@@ -1,5 +1,21 @@
 # @wso2is/admin.users.v1
 
+## 2.37.16
+
+### Patch Changes
+
+- Updated dependencies [[`005286e460c4f64a37136efbc0f59a519fbf7776`](https://github.com/wso2/identity-apps/commit/005286e460c4f64a37136efbc0f59a519fbf7776), [`7d97c818933f53099469f9d249896db509666191`](https://github.com/wso2/identity-apps/commit/7d97c818933f53099469f9d249896db509666191)]:
+  - @wso2is/admin.validation.v1@2.28.2
+  - @wso2is/admin.core.v1@2.54.25
+  - @wso2is/core@2.12.9
+  - @wso2is/admin.approval-workflows.v1@1.2.7
+  - @wso2is/i18n@2.37.2
+  - @wso2is/admin.flow-builder-core.v1@0.10.169
+  - @wso2is/admin.users.v1@2.37.16
+  - @wso2is/admin.flows.v1@1.0.138
+  - @wso2is/admin.server-configurations.v1@2.38.8
+  - @wso2is/admin.roles.v2@2.27.339
+
 ## 2.37.15
 
 ### Patch Changes
