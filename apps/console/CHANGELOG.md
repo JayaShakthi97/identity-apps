@@ -1,5 +1,41 @@
 # @wso2is/console
 
+## 2.106.4
+
+### Patch Changes
+
+- [#9856](https://github.com/wso2/identity-apps/pull/9856) [`9b4f8044764a16d17d84366a94051bae5a025487`](https://github.com/wso2/identity-apps/commit/9b4f8044764a16d17d84366a94051bae5a025487) Thanks [@github-actions](https://github.com/apps/github-actions)! - Improve notification configuration
+
+* [#9873](https://github.com/wso2/identity-apps/pull/9873) [`cddad79b668a672d6f440bf14e1d53120c7204e5`](https://github.com/wso2/identity-apps/commit/cddad79b668a672d6f440bf14e1d53120c7204e5) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add support to disable enterprise login feature
+
+- [#9861](https://github.com/wso2/identity-apps/pull/9861) [`feffe322abfe483e6709954c9903a82c60678582`](https://github.com/wso2/identity-apps/commit/feffe322abfe483e6709954c9903a82c60678582) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add feature disabling option to approval workflow rules
+
+* [#9858](https://github.com/wso2/identity-apps/pull/9858) [`17306b4c6a008665aa954b5aef3735eddcd9f7db`](https://github.com/wso2/identity-apps/commit/17306b4c6a008665aa954b5aef3735eddcd9f7db) Thanks [@github-actions](https://github.com/apps/github-actions)! - Display correct application info URLs when tenant-qualified URLs are disabled
+
+- [#9855](https://github.com/wso2/identity-apps/pull/9855) [`a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c`](https://github.com/wso2/identity-apps/commit/a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add UI for enterprise login
+
+* [#9846](https://github.com/wso2/identity-apps/pull/9846) [`5ff31c5c91cb97289c4d7828f30d3fc7bb6f1e88`](https://github.com/wso2/identity-apps/commit/5ff31c5c91cb97289c4d7828f30d3fc7bb6f1e88) Thanks [@github-actions](https://github.com/apps/github-actions)! - Handle the workflow scenario for user deletion.
+
+* Updated dependencies [[`9b4f8044764a16d17d84366a94051bae5a025487`](https://github.com/wso2/identity-apps/commit/9b4f8044764a16d17d84366a94051bae5a025487), [`cddad79b668a672d6f440bf14e1d53120c7204e5`](https://github.com/wso2/identity-apps/commit/cddad79b668a672d6f440bf14e1d53120c7204e5), [`feffe322abfe483e6709954c9903a82c60678582`](https://github.com/wso2/identity-apps/commit/feffe322abfe483e6709954c9903a82c60678582), [`1379d95d6873ab82489d28b46124e976db438d3d`](https://github.com/wso2/identity-apps/commit/1379d95d6873ab82489d28b46124e976db438d3d), [`17306b4c6a008665aa954b5aef3735eddcd9f7db`](https://github.com/wso2/identity-apps/commit/17306b4c6a008665aa954b5aef3735eddcd9f7db), [`a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c`](https://github.com/wso2/identity-apps/commit/a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c), [`5ff31c5c91cb97289c4d7828f30d3fc7bb6f1e88`](https://github.com/wso2/identity-apps/commit/5ff31c5c91cb97289c4d7828f30d3fc7bb6f1e88)]:
+  - @wso2is/admin.approval-workflows.v1@1.2.8
+  - @wso2is/admin.console-settings.v1@2.26.12
+  - @wso2is/i18n@2.37.3
+  - @wso2is/admin.applications.v1@2.41.24
+  - @wso2is/admin.core.v1@2.54.26
+  - @wso2is/admin.users.v1@2.37.17
+  - @wso2is/admin.agents.v1@1.0.185
+  - @wso2is/admin.branding.v1@2.32.126
+  - @wso2is/admin.onboarding.v1@1.0.41
+  - @wso2is/admin.roles.v2@2.27.340
+  - @wso2is/admin.ask-password-flow-builder.v1@1.1.170
+  - @wso2is/admin.email-management.v1@2.25.334
+  - @wso2is/admin.flows.v1@1.0.139
+  - @wso2is/admin.home.v1@1.7.150
+  - @wso2is/admin.password-recovery-flow-builder.v1@1.1.170
+  - @wso2is/admin.server-configurations.v1@2.38.9
+  - @wso2is/admin.connections.v1@2.36.10
+  - @wso2is/admin.registration-flow-builder.v1@0.10.130
+
 ## 2.106.3
 
 ### Patch Changes

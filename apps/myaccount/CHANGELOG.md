@@ -1,5 +1,14 @@
 # @wso2is/myaccount
 
+## 2.30.1
+
+### Patch Changes
+
+- [#9866](https://github.com/wso2/identity-apps/pull/9866) [`1379d95d6873ab82489d28b46124e976db438d3d`](https://github.com/wso2/identity-apps/commit/1379d95d6873ab82489d28b46124e976db438d3d) Thanks [@github-actions](https://github.com/apps/github-actions)! - Update the password reset confirmation message.
+
+- Updated dependencies [[`1379d95d6873ab82489d28b46124e976db438d3d`](https://github.com/wso2/identity-apps/commit/1379d95d6873ab82489d28b46124e976db438d3d), [`a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c`](https://github.com/wso2/identity-apps/commit/a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c)]:
+  - @wso2is/i18n@2.37.3
+
 ## 2.30.0
 
 ### Minor Changes

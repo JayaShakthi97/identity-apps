@@ -1,5 +1,22 @@
 # @wso2is/admin.console-settings.v1
 
+## 2.26.12
+
+### Patch Changes
+
+- [#9873](https://github.com/wso2/identity-apps/pull/9873) [`cddad79b668a672d6f440bf14e1d53120c7204e5`](https://github.com/wso2/identity-apps/commit/cddad79b668a672d6f440bf14e1d53120c7204e5) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add support to disable enterprise login feature
+
+* [#9855](https://github.com/wso2/identity-apps/pull/9855) [`a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c`](https://github.com/wso2/identity-apps/commit/a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c) Thanks [@github-actions](https://github.com/apps/github-actions)! - Add UI for enterprise login
+
+* Updated dependencies [[`1379d95d6873ab82489d28b46124e976db438d3d`](https://github.com/wso2/identity-apps/commit/1379d95d6873ab82489d28b46124e976db438d3d), [`17306b4c6a008665aa954b5aef3735eddcd9f7db`](https://github.com/wso2/identity-apps/commit/17306b4c6a008665aa954b5aef3735eddcd9f7db), [`a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c`](https://github.com/wso2/identity-apps/commit/a6acaa19b9e5bdb0fa48a8d4fa750213add7e91c), [`5ff31c5c91cb97289c4d7828f30d3fc7bb6f1e88`](https://github.com/wso2/identity-apps/commit/5ff31c5c91cb97289c4d7828f30d3fc7bb6f1e88)]:
+  - @wso2is/i18n@2.37.3
+  - @wso2is/admin.applications.v1@2.41.24
+  - @wso2is/admin.core.v1@2.54.26
+  - @wso2is/admin.users.v1@2.37.17
+  - @wso2is/admin.roles.v2@2.27.340
+  - @wso2is/admin.server-configurations.v1@2.38.9
+  - @wso2is/admin.connections.v1@2.36.10
+
 ## 2.26.11
 
 ### Patch Changes
