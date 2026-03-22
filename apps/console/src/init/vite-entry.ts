@@ -19,8 +19,8 @@
 import "@babel/polyfill";
 import { Buffer } from "buffer";
 
-const globalScope = globalThis as typeof globalThis & { Buffer?: typeof Buffer };
-const globalWithNodeAliases = globalScope as typeof globalScope & { global?: typeof globalThis };
+const globalScope: any = globalThis as typeof globalThis & { Buffer?: typeof Buffer };
+const globalWithNodeAliases: any = globalScope as typeof globalScope & { global?: typeof globalThis };
 
 if (typeof globalScope.Buffer === "undefined") {
     globalScope.Buffer = Buffer;

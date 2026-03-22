@@ -199,13 +199,13 @@ export class ExtensionsManager {
                 // and the '.tsx' extension to overcome rollup limitation
                 //https://www.npmjs.com/package/@rollup/plugin-dynamic-import-vars
                 if (value.includes("application-templates")) {
-                    const contentModuleLoader = applicationTemplateContentModuleMap[value];
+                    const contentModuleLoader: () => Promise<any> = applicationTemplateContentModuleMap[value];
 
                     if (contentModuleLoader) {
                         content[ key ] = lazy(contentModuleLoader);
                     }
                 } else if (value.includes("identity-provider-templates")) {
-                    const contentModuleLoader = identityProviderTemplateContentModuleMap[value];
+                    const contentModuleLoader: () => Promise<any> = identityProviderTemplateContentModuleMap[value];
 
                     if (contentModuleLoader) {
                         content[ key ] = lazy(contentModuleLoader);
@@ -227,7 +227,7 @@ export class ExtensionsManager {
             // and the '.json' extension to overcome rollup limitation
             //https://www.npmjs.com/package/@rollup/plugin-dynamic-import-vars
             if (resource.includes("application-templates")) {
-                const resourceModuleLoader = applicationTemplateResourceModuleMap[resource];
+                const resourceModuleLoader: () => Promise<any> = applicationTemplateResourceModuleMap[resource];
 
                 return resourceModuleLoader
                     ? resourceModuleLoader().then((module: any) => module.default)
@@ -235,7 +235,7 @@ export class ExtensionsManager {
             }
 
             if (resource.includes("identity-provider-templates")) {
-                const resourceModuleLoader = identityProviderTemplateResourceModuleMap[resource];
+                const resourceModuleLoader: () => Promise<any> = identityProviderTemplateResourceModuleMap[resource];
 
                 return resourceModuleLoader
                     ? resourceModuleLoader().then((module: any) => module.default)
