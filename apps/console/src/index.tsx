@@ -40,7 +40,7 @@ import Theme from "./theme";
 ContextUtils.setRuntimeConfig(Config.getDeploymentConfig());
 
 /**
- * TODO: Use Monaco with the webpack plugin.
+ * TODO: Evaluate bundler-aware Monaco loading optimization.
  * {@link https://github.com/wso2-enterprise/asgardeo-product/issues/23937}
  *
  * Function to check the status of the Monaco CDN.
